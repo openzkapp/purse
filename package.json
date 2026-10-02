@@ -1,0 +1,65 @@
+{
+  "name": "@openzk.app/purse",
+  "version": "0.1.1",
+  "type": "module",
+  "description": "Anonymous prepaid API billing for AI apps: private ETH notes, per-request zero-knowledge burns, provable solvency.",
+  "license": "MIT",
+  "author": "OpenZK <dev@openzk.app>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openzkapp/purse.git"
+  },
+  "bugs": "https://github.com/openzkapp/openzk/issues",
+  "homepage": "https://openzk.app",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "development": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "development": "./src/react.ts",
+      "default": "./dist/react.js"
+    },
+    "./config": {
+      "types": "./dist/config.d.ts",
+      "development": "./src/config.ts",
+      "default": "./dist/config.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node build.mjs",
+    "prepack": "bun run build"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "@openanonymity/zkapi-browser-sdk": "^0.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@openanonymity/zkapi-browser-sdk": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "zkapi",
+    "zero-knowledge",
+    "privacy",
+    "ethereum",
+    "ai",
+    "payments",
+    "micropayments",
+    "openrouter"
+  ]
+}
